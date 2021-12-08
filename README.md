@@ -1,1 +1,5 @@
-# ml-spotify
+# ml-spotify project
+
+## TODOs
+
+## Ideas
