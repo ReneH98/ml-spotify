@@ -65,20 +65,21 @@ def get_features_from_track_IDs(track_IDs: list) -> list:
 
     return features
 
-def extract_features_from_playlist(playlist_ID: str, filename: str = None) -> None:
+def extract_features_from_playlist(playlist_ID: str, genre: str, filename: str = None) -> None:
     track_IDs = get_track_IDs_from_playlist_ID(playlist_ID)
     features = get_features_from_track_IDs(track_IDs)
-    data = {
-        "playlist_ID": playlist_id,
-        "track_IDs": track_IDs,
-        "track_features": features
-    }
+
+    # list comprehension to add the key genre to each dict in a list of dicts
+    features = [dict(f, **{"genre": genre}) for f in features]
     if filename is None: filename = playlist_ID + ".json"
-    __write_file(filename, data)
+    __write_file(filename, features)
 
 if __name__ == '__main__':
-    playlist_id = "37i9dQZF1DX4jP4eebSWR9"
-    playlist_id = "1Z0cz3sxtVkHxZTdK5FLr8"
-    playlist_id = "3yTvD1D59GVMzT2rN6mLy9"
 
-    extract_features_from_playlist(playlist_id, filename="something.json")
+    # https://open.spotify.com/playlist/37i9dQZF1DWZJhOVGWqUKF?si=18913d45450d4410
+    rock_playlist = "37i9dQZF1DWZJhOVGWqUKF"
+    extract_features_from_playlist(rock_playlist, "rock")
+
+    # https://open.spotify.com/playlist/37i9dQZF1DXcfWvNFKxjDo?si=6f5b1958827149ff
+    edm_playlist = "37i9dQZF1DXcfWvNFKxjDo"
+    extract_features_from_playlist(edm_playlist, "edm")
