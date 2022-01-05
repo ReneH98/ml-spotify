@@ -39,7 +39,8 @@ def get_track_IDs_from_playlist_ID(playlist_ID: str) -> list:
         playlist = sp.playlist_items(playlist_ID, offset=offset)
         total_tracks -= 100
         offset += 100
-        ids += [i["track"]["id"] for i in playlist["items"]]
+        id_list = [i["track"]["id"] for i in playlist["items"]]
+        ids += list(set(id_list))
         
     # return a list of all track ids without None values
     return list(filter(partial(is_not, None), ids))
@@ -88,7 +89,25 @@ if __name__ == '__main__':
 
     playlist = {
         "rock": [
-            ]
+            "37i9dQZF1DWZJhOVGWqUKF", # https://open.spotify.com/playlist/37i9dQZF1DWZJhOVGWqUKF?si=d7e98ab126fc4775
+            "37i9dQZF1DX4vth7idTQch", # https://open.spotify.com/playlist/37i9dQZF1DX4vth7idTQch?si=b6615e9fe24247e0
+            "37i9dQZF1DX3oM43CtKnRV" # https://open.spotify.com/playlist/37i9dQZF1DX3oM43CtKnRV?si=22531f45d2ab4fa3
+        ],
+        "edm": [
+            "37i9dQZF1DX0pH2SQMRXnC", # https://open.spotify.com/playlist/37i9dQZF1DX0pH2SQMRXnC?si=19a3ef5d30d54f06
+            "37i9dQZF1DX6J5NfMJS675", # https://open.spotify.com/playlist/37i9dQZF1DX6J5NfMJS675?si=51bc4eb90bfb45c4
+            "37i9dQZF1DX7ZUug1ANKRP" # https://open.spotify.com/playlist/37i9dQZF1DX7ZUug1ANKRP?si=ad499640a06c4936
+        ],
+        "classic": [
+            "37i9dQZF1DXaHEllsiT8lf", # https://open.spotify.com/playlist/37i9dQZF1DXaHEllsiT8lf?si=268afb23cad843dd
+            "37i9dQZF1DWZf52HmhYw49", # https://open.spotify.com/playlist/37i9dQZF1DWZf52HmhYw49?si=3615d6f7e736421b
+            "37i9dQZF1DWWEJlAGA9gs0" # https://open.spotify.com/playlist/37i9dQZF1DWWEJlAGA9gs0?si=e72bea12b8a74858
+        ],
+        "jazz": [
+            "37i9dQZF1DWTR4ZOXTfd9K", # https://open.spotify.com/playlist/37i9dQZF1DWTR4ZOXTfd9K?si=48a1869291e54948
+            "37i9dQZF1DX1C8KR4UJlnr", # https://open.spotify.com/playlist/37i9dQZF1DX1C8KR4UJlnr?si=e2334a238c0f4557
+            "37i9dQZF1DX9n1kQRulpEn" # https://open.spotify.com/playlist/37i9dQZF1DX9n1kQRulpEn?si=c3ff641894514280
+        ],
     }
 
     extract_features_from_multiple_playlists(playlist_dict=playlist)
