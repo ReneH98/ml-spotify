@@ -74,12 +74,21 @@ def extract_features_from_playlist(playlist_ID: str, genre: str, filename: str =
     if filename is None: filename = playlist_ID + ".json"
     __write_file(filename, features)
 
+def extract_features_from_multiple_playlists(playlist_dict: dict) -> None:
+    for genre, playlist_list in playlist_dict.items():
+        track_ID_list = []
+        for playlist_ID in playlist_list:
+            track_IDs = get_track_IDs_from_playlist_ID(playlist_ID)
+            track_ID_list += track_IDs
+        features = get_features_from_track_IDs(track_ID_list)
+        features = [dict(f, **{"genre": genre}) for f in features]
+        __write_file(genre + ".json", features)
+
 if __name__ == '__main__':
 
-    # https://open.spotify.com/playlist/37i9dQZF1DWZJhOVGWqUKF?si=18913d45450d4410
-    rock_playlist = "37i9dQZF1DWZJhOVGWqUKF"
-    extract_features_from_playlist(rock_playlist, "rock")
+    playlist = {
+        "rock": [
+            ]
+    }
 
-    # https://open.spotify.com/playlist/37i9dQZF1DXcfWvNFKxjDo?si=6f5b1958827149ff
-    edm_playlist = "37i9dQZF1DXcfWvNFKxjDo"
-    extract_features_from_playlist(edm_playlist, "edm")
+    extract_features_from_multiple_playlists(playlist_dict=playlist)

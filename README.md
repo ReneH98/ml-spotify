@@ -1,5 +1,11 @@
 # ml-spotify project
 
+## TODOs
+- 
+
+## Ideas
+- 
+
 ## Features description
 
 Link: https://developer.spotify.com/documentation/web-api/reference/#/operations/get-audio-features
@@ -30,7 +36,3 @@ Link: https://developer.spotify.com/documentation/web-api/reference/#/operations
     - An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of "3/4", to "7/4". >= 3, <= 7
 - **valence** [number float]
      - A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). >= 0, <= 1
-
-## TODOs
-
-## Ideas
