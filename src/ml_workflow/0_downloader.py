@@ -108,6 +108,11 @@ if __name__ == '__main__':
             "37i9dQZF1DX1C8KR4UJlnr", # https://open.spotify.com/playlist/37i9dQZF1DX1C8KR4UJlnr?si=e2334a238c0f4557
             "37i9dQZF1DX9n1kQRulpEn" # https://open.spotify.com/playlist/37i9dQZF1DX9n1kQRulpEn?si=c3ff641894514280
         ],
+        "hiphop": [
+            "37i9dQZF1DX7Mq3mO5SSDc", # https://open.spotify.com/playlist/37i9dQZF1DX7Mq3mO5SSDc?si=3ea682942a2a4734
+            "37i9dQZF1DX186v583rmzp", # https://open.spotify.com/playlist/37i9dQZF1DX186v583rmzp?si=f87582055c5245cf
+            "0weizyV5WNZP3tvfXWVfmg" # https://open.spotify.com/playlist/0weizyV5WNZP3tvfXWVfmg?si=904f5a0e453248dd
+        ]
     }
 
     extract_features_from_multiple_playlists(playlist_dict=playlist)
