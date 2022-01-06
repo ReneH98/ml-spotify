@@ -1,7 +1,11 @@
 # ml-spotify project
 
 ## TODOs
-- 
+- dutch pause
+- plots
+- outlier
+- feature engineering
+- feature selection
 
 ## Ideas
 - 
