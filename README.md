@@ -1,10 +1,10 @@
 # ml-spotify project
 
 ## TODOs
-- dutch pause
 - plots
-- outlier
-- feature engineering
+- outlier removal OVERTHINK!! docu/outlier*
+- correlation - remove correlated features
+- feature engineering -> PCA! (PC1+PC2 vs PC1)
 - feature selection
 
 ## Ideas
