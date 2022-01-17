@@ -4,7 +4,7 @@
 - plots
 - outlier removal OVERTHINK!! docu/outlier*
 - correlation - remove correlated features
-- feature engineering -> PCA! (PC1+PC2 vs PC1)
+- feature engineering -> PCA! (PC1+PC2 vs PC1) https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60
 - feature selection
 
 ## Ideas
