@@ -1,5 +1,9 @@
 # ml-spotify project
 
+## Pipeline:
+- drop correlated features (remember feature names)
+- do PCA transform
+
 ## TODOs
 - plots
 - outlier removal OVERTHINK!! docu/outlier*
