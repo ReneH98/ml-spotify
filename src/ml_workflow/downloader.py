@@ -77,13 +77,15 @@ def extract_features_from_playlist(playlist_ID: str, genre: str, filename: str =
 
 def extract_features_from_multiple_playlists(playlist_dict: dict) -> None:
     for genre, playlist_list in playlist_dict.items():
-        track_ID_list = []
+        genre_samples = []
+        
         for playlist_ID in playlist_list:
             track_IDs = get_track_IDs_from_playlist_ID(playlist_ID)
-            track_ID_list += track_IDs
-        features = get_features_from_track_IDs(track_ID_list)
-        features = [dict(f, **{"genre": genre}) for f in features]
-        __write_file(genre + ".json", features)
+            samples = get_features_from_track_IDs(track_IDs)
+            samples = [dict(s, **{"genre": genre, "playlist_id": playlist_ID}) for s in samples]
+            genre_samples += samples
+        
+        __write_file(genre + ".json", genre_samples)
 
 if __name__ == '__main__':
 
