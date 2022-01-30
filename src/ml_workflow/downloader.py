@@ -10,16 +10,6 @@ client_secret = '17d4bd23b0d24287af971ec919e65d19'
 client_credentials_manager = SpotifyClientCredentials(client_id, client_secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
-def __read_file(filename: str) -> dict:
-    try:
-        with open(filename) as f:
-            data = json.load(f)
-        return data
-    except:
-        
-        print("No such file!")
-        return None
-
 def __write_file(filename: str, data: dict) -> None:
     current_path = os.path.dirname(os.path.realpath(__file__)) 
     file = os.path.join(current_path, "data", filename)
